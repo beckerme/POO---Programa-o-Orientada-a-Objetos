@@ -1,0 +1,42 @@
+package exercicios;
+
+public class E9 {
+
+	public static void main(String[] args) {
+		String nome = "Ewerton";
+		String morada = "Rua Professor João Porto";
+		String codigoPostal = "235-000 Nisa";
+		String telefone = "+351 934 512 876";
+		int diaNascimento = 6, anoNascimento = 10, mesNascimento = 2002;
+		char estadoCivil = 's';
+		
+		printPessoa(nome, morada, codigoPostal, telefone, diaNascimento, mesNascimento, anoNascimento, estadoCivil);
+	}
+	
+	static void printPessoa(String nome, String morada, String codigoPostal, String telefone, int diaNasc, int mesNasc,
+							int anoNasc, char estadoCivil) {
+
+		System.out.printf("Nome: %s\nMorada: %s\nCodigo Postal = %s\nTelefone = %s\nData de nascimento: %d/%d/%d\n"
+				+ "Estado Civil = %s", nome, morada, codigoPostal, telefone, diaNasc, mesNasc, anoNasc, estadoCivilExtenso(estadoCivil));
+		
+	}
+	
+	static String estadoCivilExtenso(char estadoCivil) {
+
+		if(estadoCivil == 's') {
+			return "Solteir@";
+		} else if(estadoCivil == 'c') {
+			return "Casado";
+		} else if(estadoCivil == 'd') {
+			return "Divorciado";
+		} else if(estadoCivil == 'v') {
+			return "Vicuv@";
+		} else if(estadoCivil == 'u'){
+			return "Uniao de fato";
+		} else {
+			return "Insira um caracter valido";
+		}
+
+	}
+
+}
