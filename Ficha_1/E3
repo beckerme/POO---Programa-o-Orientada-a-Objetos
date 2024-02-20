@@ -6,8 +6,7 @@ public class E3 {
 		   programa deve usar os métodos definidos em 1 e 2. */
 	
 	 static int horasParaSegundos(int horas, int minutos, int segundos) {
-			int ConversaoTotal = horas * 3600 + minutos * 60 + segundos;
-			return ConversaoTotal;
+			return horas * 3600 + minutos * 60 + segundos;
 		}
 	 
 		public static int CalcularModulo(int numero) {
