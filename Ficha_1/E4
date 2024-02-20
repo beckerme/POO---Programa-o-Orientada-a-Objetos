@@ -7,12 +7,9 @@ public class E4 {
 	
 	static boolean VerificarBissexto(int ano) {
 
-		if(ano % 4 == 0 && !(ano % 100 == 0) || ano % 400 == 0) {
-			return true;
-		} 
-			return false;
-		
+		return (ano % 4 == 0 && !(ano % 100 == 0) || ano % 400 == 0);
 	}
+	
 	public static void main(String[] args) {
 		if(VerificarBissexto(2023)) {
 			System.out.println("É um ano bissexto");
