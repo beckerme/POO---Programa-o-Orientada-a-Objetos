@@ -1,0 +1,25 @@
+package exercicios;
+
+public class E3 {
+		/* Escreva um método que dadas duas horas (horas, minutos e segundos) indique a 
+		   diferença entre as duas, em segundos. O valor retornado deve ser sempre positivo. O 
+		   programa deve usar os métodos definidos em 1 e 2. */
+	
+	 static int horasParaSegundos(int horas, int minutos, int segundos) {
+			int horasParaSegundos = horas*3600;
+			int minutosParaSegundos = minutos * 60;
+			int ConversaoTotal = horasParaSegundos + minutosParaSegundos + segundos;
+			return ConversaoTotal;
+		}
+	 
+		public static int CalcularModulo(int numero) {
+			return Math.abs(numero);
+		}
+	 
+	public static void main(String[] args) {
+		int resultado = horasParaSegundos(1, 30, 0) - horasParaSegundos(0, 0, 0);
+		System.out.println(CalcularModulo(resultado));
+
+	}
+
+}
