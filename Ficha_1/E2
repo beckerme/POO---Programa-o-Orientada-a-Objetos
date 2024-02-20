@@ -1,0 +1,21 @@
+package exercicios;
+
+public class E2 {
+	/*
+	  Escreva um método que dada uma hora nas componentes horas, minutos e segundos 
+	  devolva o valor em segundos.
+	  
+	  */
+	 static int horasParaSegundos(int horas, int minutos, int segundos) {
+		int horasParaSegundos = horas*3600;
+		int minutosParaSegundos = minutos * 60;
+		int ConversaoTotal = horasParaSegundos + minutosParaSegundos + segundos;
+		return ConversaoTotal;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(horasParaSegundos(1, 10, 30));
+
+	}
+
+}
