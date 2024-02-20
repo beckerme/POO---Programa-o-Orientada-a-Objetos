@@ -1,0 +1,20 @@
+package exercicios;
+
+public class E7 {
+	/*Escreva um método que dadas duas datas (d/m/a) devolva um valor < 0 se a primeira 
+	  for menor que a segunda, 0 se forem iguais e > 0 se a primeira for maior que a 
+	  segunda. 
+*/
+	static int compararDatas(int dia, int mes, int ano, int dia2, int mes2, int ano2) {
+		if(ano != ano2)
+			return ano - ano2;
+		if(mes != mes2)
+			return mes - mes2;
+		return dia - dia2;
+	}
+	public static void main(String[] args) {
+		System.out.println(compararDatas(26, 2, 2025, 23, 2, 2025));
+
+	}
+
+}
