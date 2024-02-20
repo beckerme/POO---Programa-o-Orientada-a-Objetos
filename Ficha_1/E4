@@ -1,0 +1,25 @@
+package exercicios;
+
+public class E4 {
+	
+	/* Escreva um método que indique se um dado ano é bissexto ou comum. Um ano é 
+	   bissexto se for divisível por 4 e não divisível por 100 ou divisível por 400. */
+	
+	static boolean VerificarBissexto(int ano) {
+
+		if(ano % 4 == 0 && !(ano % 100 == 0) || ano % 400 == 0) {
+			return true;
+		} 
+			return false;
+		
+	}
+	public static void main(String[] args) {
+		if(VerificarBissexto(2023)) {
+			System.out.println("É um ano bissexto");
+		} else {
+			System.out.println("É um ano comum");
+		}
+
+	}
+
+}
