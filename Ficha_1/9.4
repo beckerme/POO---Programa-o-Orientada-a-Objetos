@@ -1,0 +1,20 @@
+package exercicios;
+
+public class E9_4 {
+	static int getIdade(int anoNasc, int anoRef) {
+		return Math.abs(anoRef - anoNasc);
+	}
+	
+	static int eMaior(int anoNasc, int anoRef) {
+		return getIdade(anoNasc, anoRef) > 18 ? 1 : 0;
+	}
+	public static void main(String[] args) {
+		if(eMaior(2000, 2009) == 1) {
+			System.out.println("É maior de idade.");
+		} else {
+			System.out.println("Não é maior de idade.");
+		}
+
+	}
+
+}
