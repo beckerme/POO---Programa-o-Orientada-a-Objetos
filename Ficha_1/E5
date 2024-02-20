@@ -1,0 +1,24 @@
+package exercicios;
+
+public class E5 {
+	/*Escreva um método que devolva o número de dias de um ano. Utilize o método do 
+	  problema anterior. */
+	
+	static boolean VerificarBissexto(int ano) {
+
+		if(ano % 4 == 0 && !(ano % 100 == 0) || ano % 400 == 0) {
+			return true;
+		} 
+			return false;
+	}
+	
+	public static void main(String[] args) {
+		if(VerificarBissexto(2023)) {
+			System.out.println("O ano tem 366 dias");
+		} else {
+			System.out.println("O ano tem 365 dias");
+		}
+
+	}
+
+}
