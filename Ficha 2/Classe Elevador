@@ -1,0 +1,87 @@
+package Exercicios_;
+
+public class Elevador {
+	int andarAtual;
+	int andarSuperior;
+	int andarInferior;
+	
+	public Elevador(int andarAtual, int andarInferior, int andarSuperior) {
+		setAndarAtual(andarAtual);
+		setAndarInferior(andarInferior);
+		setAndarSuperior(andarSuperior);
+	}
+	
+	public Elevador(int andarSuperior, int andarInferior) {
+		setAndarAtual(andarInferior);
+		setAndarInferior(andarInferior);
+		setAndarSuperior(andarSuperior);
+	}
+	
+	public Elevador(int andarSuperior) {
+		setAndarAtual(0);
+		setAndarInferior(0);
+		setAndarSuperior(andarSuperior);
+	}
+
+	public int getAndarAtual() {
+		return andarAtual;
+	}
+
+	public void setAndarAtual(int andarAtual) {
+		this.andarAtual = andarAtual;
+	}
+
+	public int getAndarSuperior() {
+		return andarSuperior;
+	}
+
+	public void setAndarSuperior(int andarSuperior) {
+		this.andarSuperior = andarSuperior;
+	}
+
+	public int getAndarInferior() {
+		return andarInferior;
+	}
+
+	public void setAndarInferior(int andarInferior) {
+		this.andarInferior = andarInferior;
+	}
+
+	public String toString() {
+		return "Elevador [andarAtual=" + andarAtual + ", andarSuperior=" + andarSuperior + ", andarInferior="
+				+ andarInferior + "]";
+	}
+	
+	public boolean estaTopo() {
+		return andarAtual == andarSuperior;
+	}
+	
+	public boolean estaFundo() {
+		return andarAtual == andarInferior;
+	}
+	
+	public boolean acede(int andar) {
+		return andar >= andarInferior && andar <= andarSuperior;
+	}
+	
+	public void sobe() {
+		if(andarAtual < andarSuperior) andarAtual++;
+	}
+	
+	public void desce() {
+		 if(andarAtual > andarInferior) andarAtual--;
+	}
+	
+	public void irPara(int andar) {
+		if(acede(andar)) {
+			for(int i = andarAtual; i < andar; i++) {
+				andarAtual++;
+			}
+			
+			for(int i = andarAtual; i > andar; i--) {
+				andarAtual--;
+			}	
+		}
+	}
+	
+}
