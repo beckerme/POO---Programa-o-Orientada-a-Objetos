@@ -1,0 +1,33 @@
+package Exercicios_;
+
+public class E3 {
+
+	public static void main(String[] args) {
+		Elevador e1 = new Elevador(5, -3, 10);
+		Elevador e2 = new Elevador(-1, -1, 12);
+		Elevador e3 = new Elevador(0, 0, 4);
+		
+//		e1.desce();
+//		e1.desce();
+//		e1.desce();
+//		e1.desce();
+		
+//		System.out.println(e1.andarAtual);
+		
+		e3.sobe();
+		e3.sobe();
+		e3.sobe();
+		e3.sobe();
+		e3.sobe();
+		e3.sobe();
+		e3.sobe();
+		e3.sobe();
+		
+		e3.desce();
+		e3.desce();
+		
+		System.out.println(e3.andarAtual);
+
+	}
+
+}
