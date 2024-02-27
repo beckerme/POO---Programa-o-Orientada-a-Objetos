@@ -1,1 +1,108 @@
+package Exercicios_;
+
+public class E1 {
+		/*1. Implemente uma classe Pessoa, que armazene a seguinte informação:
+	Nome
+	Morada
+	Código Postal e localidade
+	Telefone
+	Data de nascimento
+	Estado Civil [s – solteiro, c – casado, d – divorciado, v – viúvo, u – união de facto]
+	Implemente, nessa classe, os seguintes métodos:
+	setters
+	getters
+	getEstadoCivilExtenso devolve o estado civil por extenso
+	toString() devolve a informação da pessoa numa string com o formato:
+	Nome: <nome>
+	Morada: <morada>
+	 <código postal>
+	Tel.: <telefone>
+	Data de nascimento: dd/mm/aaaa
+	Estado civil: <estado civil por extenso>
+	getIdade( int anoRef ) devolve a idade da pessoa no final do ano de referência
+	eMaiorIdade( int anoRef ) indica se a pessoa é maior de idade num dado ano
+	
+	 2. Escreva um programa que crie 5 pessoas e imprima a informação dessas 5 pessoas. Depois
+	implemente os métodos descritos de seguida:
+	
+	2.1. Imprima a informação das pessoas que forem maiores de idade no final de um ano de
+	referência. 
+	
+	2.2. Imprima a informação das pessoas que possuem um determinado estado civil. 
+	
+	2.3. Imprima a informação das pessoas que possuem um dado código postal. 
+
+	2.4. Um método que dado o nome da pessoa (parcial ou completo) imprima o número de
+		 telefone. 
+		 
+	 2.5. Um método que dado o número de telefone da pessoa imprime o seu nome e morada. 
+	 
+	 2.6. Suponha que pretendia acrescentar o número do cartão de cidadão e de utente do
+		  serviço nacional de saúde à informação sobre a Pessoa. Que alterações teria de fazer
+		  na classe e no programa? 
+		  	
+		  	Eu teria que criar, na classe Pessoa, mais duas variáveis privadas, uma para o numero do cartao de cidadao e outra para o cartão de crédito/débito, criar um
+		  	getter e um setter para cada um e adicionar esta informação para cada pessoa já criada OU modificar o construtor.  	
+
+	 */
+	
+	static void imprimirTelefone(Pessoa []p, String nome) {
+		for(int i = 0; i < p.length; i++) {
+			if(p[i].getNome().contains(nome)) /* utilizo contain pois ele retorna um valor que pode estar no Array, ou seja nao precisa ser exatamente igual aquele valor, mas
+												sim parecido, diferente do equals para String que tem que ser um valor IDENTICO. */
+				System.out.println(p[i].toString());
+		}
+	}
+	
+	static void imprimriNomeEMorada(Pessoa []p, String nome) {
+		for(int i = 0; i < p.length; i++) {
+			if(p[i].getNome().contains(nome))
+				System.out.println(p[i].getTelefone());
+		}
+	}
+	
+	static void imprimirMoradaENome(Pessoa []p, String tel) {
+		for(int i = 0; i < p.length; i++) {
+			if(p[i].getTelefone().contains(tel) && p[i].getTelefone().contains(tel))
+				System.out.println(p[i].getNome() + " " + p[i].getCodigoPostELocalidade());
+		}
+	}
+	
+	public static void main(String[] args) {
+		Pessoa p1 = new Pessoa("Teresa", "Rua das Laranjeiras, nº 5", "6000-2345, Castelo Branco", "+351 934 5127 874", 8, 4, 2022, 's');
+		Pessoa p2 = new Pessoa("Jose", "Rua Laranjeiras, nº 2", "2000-2345, Castelo Branco", "+351 984 9847 874", 12, 4, 2020, 'v');
+		Pessoa p3 = new Pessoa("Maria", "Rua das, nº 1", "1000-2345, Castelo Branco", "+351 937 4127 874", 5, 4, 2018, 'd');
+		Pessoa p4 = new Pessoa("Joao", "Rua, nº 5", "5000-234, Castelo Branco", "+351 954 4727 874", 1, 4, 2016, 's');
+		Pessoa p5 = new Pessoa("Marcos", " Laranjeiras, nº 6", "8000-235, Castelo Branco", "+351 934 8367 874", 9, 4, 1978, 's');
+		
+		int tamMax = 5;
+		Pessoa []p = new Pessoa[tamMax];
+		p[0] = p1;
+		p[1] = p2;
+		p[2] = p3;
+		p[3] = p4;
+		p[4] = p5;
+		
+		for(int i = 0; i < p.length; i++) {
+			if(p[i].eMaiorIdade(2024))
+				System.out.println(p[i].toString());
+			
+			if(p[i].getEstadoCivil() == 's') {
+				System.out.println(p[i].toString());
+			}
+			
+			if(p[i].getCodigoPostELocalidade() == "6000-2345, Castelo Branco") {
+				System.out.println(p[i].toString());
+			}
+		}
+		
+		imprimriNomeEMorada(p, "Marcos");
+		
+		imprimirTelefone(p, "Jos");
+		
+		imprimirMoradaENome(p, "+351 934 5127 874");
+	
+	}
+
+}
 
