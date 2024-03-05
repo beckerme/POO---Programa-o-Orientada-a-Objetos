@@ -1,0 +1,78 @@
+package Exercicios_;
+import java.lang.reflect.Array;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+public class Hora {
+	private int hora, minutos, segundos;
+
+	public Hora(int hora, int minutos, int segundos) {
+		this.hora = hora;
+		this.minutos = minutos;
+		this.segundos = segundos;
+	}
+	
+	public Hora(int hora) {
+		LocalDateTime horaAtual = java.time.LocalDateTime.now(); 
+		this.hora = horaAtual.getHour();
+		this.minutos = horaAtual.getMinute();
+		this.segundos = horaAtual.getSecond();
+	}
+	
+	public Hora(long segundos) {
+		double restoSegundos = (segundos % 3600);
+		
+		this.hora = ((int)segundos  / 3600);
+		this.minutos = ((int) restoSegundos / 60);
+		this.segundos = ((int) restoSegundos  % 60);
+	}
+	
+	public Hora(String horaTexto) {
+		String []hora = horaTexto.split(":");
+		
+		this.hora = Integer.parseInt(hora[0]);
+		this.minutos = Integer.parseInt(hora[1]);
+		this.segundos = Integer.parseInt(hora[2]);
+		
+	}
+
+	public int getHora() {
+		return hora;
+	}
+
+	public void setHora(int hora) {
+		this.hora = hora;
+	}
+
+	public int getMinutos() {
+		return minutos;
+	}
+
+	public void setMinutos(int minutos) {
+		this.minutos = minutos;
+	}
+
+	public int getSegundos() {
+		return segundos;
+	}
+
+	public void setSegundos(int segundos) {
+		this.segundos = segundos;
+	}
+	
+	public int compareTo(Hora segundaHora) {
+		if(this.hora != segundaHora.hora) {
+			return this.hora - segundaHora.hora;
+		} else if(this.minutos != segundaHora.minutos) {
+			return this.minutos - segundaHora.minutos;
+		}
+		return this.segundos - segundaHora.segundos;
+		
+	}
+	
+	public String toString() {
+		return "Hora [hora=" + hora + ", minutos=" + minutos + ", segundos=" + segundos + "]";
+	}
+	
+	
+}
