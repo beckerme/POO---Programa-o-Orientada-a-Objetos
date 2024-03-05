@@ -1,0 +1,13 @@
+package Exercicios_;
+
+public class E4 {
+
+	public static void main(String[] args) {
+		Hora h1 = new Hora("12:30:23");
+		
+		System.out.println(h1);
+		
+
+	}
+
+}
